@@ -1,33 +1,241 @@
 <!doctype html>
-<html lang="zh-CN">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="扣子编程，你的 AI 开发伙伴已就位" />
-    <title>扣子编程 - AI 开发伙伴</title>
-    <link rel="stylesheet" href="/styles/main.css" />
-  </head>
-  <body>
-    <div id="app">
-      <main class="main-wrapper">
-        <div class="content-container">
-          <img
-            src="https://lf-coze-web-cdn.coze.cn/obj/eden-cn/lm-lgvj/ljhwZthlaukjlkulzlp/coze-coding/icon/coze-coding.gif"
-            alt="扣子编程 Logo"
-            class="logo-image"
-          />
-          <div>
-            <div class="text-container">
-              <h1 class="heading">
-                应用开发中
-              </h1>
-              <p class="description">
-                请稍后，页面即将呈现
-              </p>
-            </div>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="IELTS Writing Practice - Master Task 1 and Task 2 with timed exercises and model answers" />
+  <title>IELTS Writing Practice</title>
+  <link rel="preconnect" href="https://fonts.googleapis.cn" />
+  <link rel="preconnect" href="https://fonts.gstatic.cn" crossorigin />
+  <link href="https://fonts.googleapis.cn/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{--bg:#FAF8F5;--bg-card:#FFF;--primary:#1E3A5F;--primary-light:#2A5082;--primary-lighter:#E8EEF4;--accent:#D4A853;--accent-light:#F5E6C4;--text:#2C2C2C;--text-secondary:#6B7280;--text-muted:#9CA3AF;--success:#059669;--success-light:#ECFDF5;--danger:#DC2626;--danger-light:#FEF2F2;--border:#E5E7EB;--border-light:#F3F4F6;--shadow-sm:0 1px 2px rgba(0,0,0,.05);--shadow:0 1px 3px rgba(0,0,0,.08),0 1px 2px rgba(0,0,0,.04);--radius:6px;--radius-lg:8px;--transition:200ms ease}
+    body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh;display:flex;flex-direction:column}
+    .header{background:var(--primary);color:#fff;padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(30,58,95,.15)}
+    .header-left{display:flex;align-items:center;gap:12px}
+    .header-logo{width:32px;height:32px;background:var(--accent);border-radius:var(--radius);display:flex;align-items:center;justify-content:center;font-family:'Merriweather',serif;font-weight:900;font-size:16px;color:var(--primary)}
+    .header-title{font-family:'Merriweather',serif;font-size:18px;font-weight:700;letter-spacing:-.3px}
+    .header-right{display:flex;align-items:center;gap:16px}
+    .header-stat{font-size:13px;color:rgba(255,255,255,.7);display:flex;align-items:center;gap:6px}
+    .header-stat strong{color:var(--accent);font-weight:600}
+    .btn-sidebar-toggle{display:none;background:none;border:none;color:#fff;cursor:pointer;padding:4px;font-size:20px}
+    .app-layout{display:flex;flex:1;overflow:hidden;height:calc(100vh - 56px)}
+    .sidebar{width:360px;min-width:360px;background:var(--bg-card);border-right:1px solid var(--border);display:flex;flex-direction:column;overflow:hidden;transition:transform var(--transition)}
+    .sidebar-header{padding:16px 20px;border-bottom:1px solid var(--border)}
+    .sidebar-title{font-family:'Merriweather',serif;font-size:15px;font-weight:700;color:var(--primary);margin-bottom:12px}
+    .filter-row{display:flex;gap:8px;margin-bottom:10px}
+    .filter-btn{padding:5px 14px;border:1px solid var(--border);border-radius:var(--radius);background:#fff;font-size:13px;font-weight:500;color:var(--text-secondary);cursor:pointer;transition:all var(--transition);font-family:'Inter',sans-serif}
+    .filter-btn:hover{border-color:var(--primary);color:var(--primary)}
+    .filter-btn.active{background:var(--primary);color:#fff;border-color:var(--primary)}
+    .search-box{width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:var(--radius);font-size:13px;font-family:'Inter',sans-serif;color:var(--text);background:var(--bg);outline:none;transition:border-color var(--transition)}
+    .search-box:focus{border-color:var(--primary)}
+    .search-box::placeholder{color:var(--text-muted)}
+    .topic-list{flex:1;overflow-y:auto;padding:8px 12px}
+    .topic-list::-webkit-scrollbar{width:5px}
+    .topic-list::-webkit-scrollbar-track{background:transparent}
+    .topic-list::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
+    .topic-card{padding:14px 16px;border:1px solid var(--border-light);border-radius:var(--radius-lg);margin-bottom:8px;cursor:pointer;transition:all var(--transition);position:relative}
+    .topic-card:hover{border-color:var(--primary);box-shadow:var(--shadow);transform:translateY(-1px)}
+    .topic-card.active{border-color:var(--primary);background:var(--primary-lighter);box-shadow:var(--shadow)}
+    .topic-card-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
+    .topic-badge{font-size:11px;font-weight:600;padding:2px 8px;border-radius:3px;text-transform:uppercase;letter-spacing:.5px}
+    .badge-task1{background:#DBEAFE;color:#1E40AF}
+    .badge-task2{background:#FEF3C7;color:#92400E}
+    .topic-difficulty{font-size:11px;color:var(--text-muted);display:flex;align-items:center;gap:3px}
+    .diff-dot{width:6px;height:6px;border-radius:50%;background:var(--border);display:inline-block}
+    .diff-dot.filled{background:var(--accent)}
+    .topic-card-title{font-size:14px;font-weight:600;color:var(--text);margin-bottom:4px;line-height:1.4}
+    .topic-card-meta{font-size:12px;color:var(--text-secondary);display:flex;align-items:center;gap:10px}
+    .topic-card-status{position:absolute;top:14px;right:14px}
+    .status-icon{width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px}
+    .status-completed{background:var(--success-light);color:var(--success)}
+    .status-progress{background:var(--accent-light);color:var(--accent)}
+    .main-content{flex:1;display:flex;flex-direction:column;overflow:hidden;background:var(--bg)}
+    .welcome-screen{flex:1;display:flex;align-items:center;justify-content:center;text-align:center;padding:40px}
+    .welcome-inner{max-width:480px}
+    .welcome-icon{width:72px;height:72px;background:var(--primary-lighter);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 24px;font-size:32px}
+    .welcome-title{font-family:'Merriweather',serif;font-size:24px;font-weight:700;color:var(--primary);margin-bottom:12px}
+    .welcome-desc{font-size:15px;color:var(--text-secondary);line-height:1.7;margin-bottom:24px}
+    .welcome-tips{text-align:left;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:20px 24px}
+    .welcome-tips h3{font-size:14px;font-weight:600;color:var(--primary);margin-bottom:12px}
+    .welcome-tips li{font-size:13px;color:var(--text-secondary);margin-bottom:8px;padding-left:4px;line-height:1.5;list-style:none}
+    .welcome-tips li::before{content:"\2022";color:var(--accent);font-weight:700;display:inline-block;width:1em;margin-left:-1em}
+    .workspace{display:none;flex-direction:column;flex:1;overflow:hidden}
+    .workspace.active{display:flex}
+    .toolbar{padding:12px 24px;background:var(--bg-card);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+    .toolbar-left{display:flex;align-items:center;gap:20px}
+    .toolbar-right{display:flex;align-items:center;gap:12px}
+    .timer-container{display:flex;align-items:center;gap:10px}
+    .timer-ring{width:40px;height:40px;position:relative}
+    .timer-ring svg{transform:rotate(-90deg)}
+    .timer-ring-bg{fill:none;stroke:var(--border-light);stroke-width:3}
+    .timer-ring-progress{fill:none;stroke:var(--primary);stroke-width:3;stroke-linecap:round;transition:stroke-dashoffset 1s linear,stroke .3s}
+    .timer-ring-progress.warning{stroke:var(--accent)}
+    .timer-ring-progress.danger{stroke:var(--danger)}
+    .timer-text{font-size:15px;font-weight:600;font-variant-numeric:tabular-nums;color:var(--text);min-width:48px}
+    .timer-text.warning{color:var(--accent)}
+    .timer-text.danger{color:var(--danger)}
+    .timer-btn{padding:5px 12px;border:1px solid var(--border);border-radius:var(--radius);background:#fff;font-size:12px;font-weight:500;cursor:pointer;transition:all var(--transition);color:var(--text-secondary);font-family:'Inter',sans-serif}
+    .timer-btn:hover{border-color:var(--primary);color:var(--primary)}
+    .timer-btn.running{background:var(--primary);color:#fff;border-color:var(--primary)}
+    .word-count{font-size:13px;color:var(--text-secondary);display:flex;align-items:center;gap:6px}
+    .word-count-num{font-weight:600;color:var(--text);font-variant-numeric:tabular-nums}
+    .word-count-num.low{color:var(--danger)}
+    .word-count-num.ok{color:var(--accent)}
+    .word-count-num.good{color:var(--success)}
+    .word-target{color:var(--text-muted);font-size:12px}
+    .save-status{font-size:12px;color:var(--text-muted);display:flex;align-items:center;gap:4px}
+    .save-dot{width:6px;height:6px;border-radius:50%;background:var(--success)}
+    .topic-detail{padding:20px 24px;background:var(--bg-card);border-bottom:1px solid var(--border);max-height:200px;overflow-y:auto}
+    .topic-detail-title{font-family:'Merriweather',serif;font-size:17px;font-weight:700;color:var(--primary);margin-bottom:10px;line-height:1.4}
+    .topic-detail-meta{display:flex;align-items:center;gap:12px;margin-bottom:12px;font-size:12px;color:var(--text-secondary);flex-wrap:wrap}
+    .meta-tag{padding:2px 8px;background:var(--bg);border-radius:3px;font-weight:500}
+    .topic-detail-prompt{font-size:14px;color:var(--text);line-height:1.8;background:var(--bg);padding:16px 20px;border-radius:var(--radius);border-left:3px solid var(--primary);white-space:pre-line}
+    .writing-area{flex:1;padding:24px;overflow-y:auto;display:flex;flex-direction:column}
+    .writing-textarea{flex:1;width:100%;min-height:300px;padding:24px 28px;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);font-family:Georgia,'Times New Roman',serif;font-size:15px;line-height:1.8;color:var(--text);resize:none;outline:none;transition:border-color var(--transition);box-shadow:var(--shadow-sm)}
+    .writing-textarea:focus{border-color:var(--primary);box-shadow:var(--shadow)}
+    .writing-textarea::placeholder{color:var(--text-muted);font-style:italic}
+    .bottom-bar{padding:12px 24px;background:var(--bg-card);border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
+    .bottom-left,.bottom-right{display:flex;gap:8px}
+    .btn{padding:8px 18px;border-radius:var(--radius);font-size:13px;font-weight:500;cursor:pointer;transition:all var(--transition);border:1px solid transparent;font-family:'Inter',sans-serif}
+    .btn-outline{background:#fff;border-color:var(--border);color:var(--text-secondary)}
+    .btn-outline:hover{border-color:var(--primary);color:var(--primary)}
+    .btn-primary{background:var(--primary);color:#fff;border-color:var(--primary)}
+    .btn-primary:hover{background:var(--primary-light)}
+    .btn-danger{background:#fff;border-color:var(--border);color:var(--danger)}
+    .btn-danger:hover{background:var(--danger-light);border-color:var(--danger)}
+    .modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:200;align-items:center;justify-content:center;padding:24px}
+    .modal-overlay.active{display:flex}
+    .modal{background:var(--bg-card);border-radius:var(--radius-lg);max-width:720px;width:100%;max-height:80vh;display:flex;flex-direction:column;box-shadow:0 20px 60px rgba(0,0,0,.15)}
+    .modal-header{padding:20px 24px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+    .modal-title{font-family:'Merriweather',serif;font-size:16px;font-weight:700;color:var(--primary)}
+    .modal-close{background:none;border:none;font-size:22px;color:var(--text-muted);cursor:pointer;padding:4px;line-height:1;transition:color var(--transition)}
+    .modal-close:hover{color:var(--text)}
+    .modal-body{padding:24px;overflow-y:auto;font-size:14px;line-height:1.9;color:var(--text)}
+    .modal-body p{margin-bottom:14px}
+    .modal-footer{padding:16px 24px;border-top:1px solid var(--border);display:flex;justify-content:flex-end}
+    .scoring-panel{display:none;position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:200;align-items:center;justify-content:center;padding:24px}
+    .scoring-panel.active{display:flex}
+    .scoring-content{background:var(--bg-card);border-radius:var(--radius-lg);max-width:640px;width:100%;max-height:80vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,.15)}
+    .scoring-header{padding:20px 24px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+    .scoring-header h2{font-family:'Merriweather',serif;font-size:16px;font-weight:700;color:var(--primary)}
+    .scoring-body{padding:24px}
+    .criteria-item{margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid var(--border-light)}
+    .criteria-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+    .criteria-name{font-weight:600;font-size:14px;color:var(--primary);margin-bottom:6px}
+    .criteria-desc{font-size:13px;color:var(--text-secondary);line-height:1.6}
+    .sidebar-overlay{display:none;position:fixed;inset:0;top:56px;background:rgba(0,0,0,.3);z-index:40}
+    .sidebar-overlay.active{display:block}
+    .empty-list{text-align:center;padding:40px 20px;color:var(--text-muted);font-size:13px}
+    @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+    .workspace.active{animation:fadeIn .3s ease}
+    @media(max-width:768px){.sidebar{position:fixed;left:0;top:56px;height:calc(100vh - 56px);z-index:50;transform:translateX(-100%);box-shadow:4px 0 20px rgba(0,0,0,.1);width:320px;min-width:320px}.sidebar.open{transform:translateX(0)}.btn-sidebar-toggle{display:block}.toolbar{padding:10px 16px}.topic-detail{padding:16px}.writing-area{padding:16px}.writing-textarea{padding:16px 20px}.bottom-bar{padding:10px 16px}}
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="header-left">
+      <button class="btn-sidebar-toggle" onclick="toggleSidebar()" aria-label="Toggle sidebar">&#9776;</button>
+      <div class="header-logo">W</div>
+      <span class="header-title">IELTS Writing Practice</span>
+    </div>
+    <div class="header-right">
+      <span class="header-stat">Completed: <strong id="completedCount">0</strong> / <span id="totalCount">0</span></span>
+    </div>
+  </header>
+  <div class="app-layout">
+    <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-title">Writing Topics</div>
+        <div class="filter-row">
+          <button class="filter-btn active" data-filter="all" onclick="setFilter('all',this)">All</button>
+          <button class="filter-btn" data-filter="task1" onclick="setFilter('task1',this)">Task 1</button>
+          <button class="filter-btn" data-filter="task2" onclick="setFilter('task2',this)">Task 2</button>
+        </div>
+        <div class="filter-row">
+          <button class="filter-btn active" data-diff="all" onclick="setDiffFilter('all',this)">All Levels</button>
+          <button class="filter-btn" data-diff="easy" onclick="setDiffFilter('easy',this)">Easy</button>
+          <button class="filter-btn" data-diff="medium" onclick="setDiffFilter('medium',this)">Medium</button>
+          <button class="filter-btn" data-diff="hard" onclick="setDiffFilter('hard',this)">Hard</button>
+        </div>
+        <input type="text" class="search-box" placeholder="Search topics..." oninput="searchTopics(this.value)" />
+      </div>
+      <div class="topic-list" id="topicList"></div>
+    </aside>
+    <main class="main-content">
+      <div class="welcome-screen" id="welcomeScreen">
+        <div class="welcome-inner">
+          <div class="welcome-icon">&#9997;</div>
+          <h1 class="welcome-title">Start Your Writing Practice</h1>
+          <p class="welcome-desc">Select a topic from the left panel to begin your IELTS writing practice. Track your progress, manage your time, and compare your writing with model answers.</p>
+          <div class="welcome-tips">
+            <h3>Quick Tips</h3>
+            <ul>
+              <li><strong>Task 1</strong> &mdash; Aim for at least 150 words in 20 minutes</li>
+              <li><strong>Task 2</strong> &mdash; Aim for at least 250 words in 40 minutes</li>
+              <li>Plan your answer for 3-5 minutes before writing</li>
+              <li>Leave 3-5 minutes at the end to check your work</li>
+              <li>Your progress is saved automatically</li>
+            </ul>
           </div>
         </div>
-      </main>
+      </div>
+      <div class="workspace" id="workspace">
+        <div class="toolbar">
+          <div class="toolbar-left">
+            <div class="timer-container">
+              <div class="timer-ring">
+                <svg width="40" height="40" viewBox="0 0 40 40">
+                  <circle class="timer-ring-bg" cx="20" cy="20" r="17"/>
+                  <circle class="timer-ring-progress" id="timerProgress" cx="20" cy="20" r="17" stroke-dasharray="106.81" stroke-dashoffset="0"/>
+                </svg>
+              </div>
+              <span class="timer-text" id="timerText">00:00</span>
+              <button class="timer-btn" id="timerBtn" onclick="toggleTimer()">Start</button>
+            </div>
+            <div class="word-count">Words: <span class="word-count-num" id="wordCount">0</span><span class="word-target" id="wordTarget">/ min 150</span></div>
+          </div>
+          <div class="toolbar-right">
+            <div class="save-status" id="saveStatus"><span class="save-dot"></span> Saved</div>
+          </div>
+        </div>
+        <div class="topic-detail" id="topicDetail">
+          <h2 class="topic-detail-title" id="detailTitle"></h2>
+          <div class="topic-detail-meta" id="detailMeta"></div>
+          <div class="topic-detail-prompt" id="detailPrompt"></div>
+        </div>
+        <div class="writing-area">
+          <textarea class="writing-textarea" id="writingTextarea" placeholder="Start writing your response here..." oninput="handleWriting()"></textarea>
+        </div>
+        <div class="bottom-bar">
+          <div class="bottom-left">
+            <button class="btn btn-outline" onclick="showScoringGuide()">Scoring Guide</button>
+            <button class="btn btn-outline" onclick="showModelAnswer()">Model Answer</button>
+          </div>
+          <div class="bottom-right">
+            <button class="btn btn-danger" onclick="clearWriting()">Clear</button>
+            <button class="btn btn-primary" onclick="markComplete()">Mark Complete</button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <div class="modal-overlay" id="modelModal">
+    <div class="modal">
+      <div class="modal-header"><span class="modal-title">Model Answer</span><button class="modal-close" onclick="closeModal()">&times;</button></div>
+      <div class="modal-body" id="modelBody"></div>
+      <div class="modal-footer"><button class="btn btn-outline" onclick="closeModal()">Close</button></div>
     </div>
-  </body>
+  </div>
+  <div class="scoring-panel" id="scoringPanel">
+    <div class="scoring-content">
+      <div class="scoring-header"><h2>IELTS Writing Scoring Criteria</h2><button class="modal-close" onclick="closeScoring()">&times;</button></div>
+      <div class="scoring-body" id="scoringBody"></div>
+    </div>
+  </div>
+  <script src="/scripts/data.js"></script>
+  <script src="/scripts/app.js"></script>
+</body>
 </html>
