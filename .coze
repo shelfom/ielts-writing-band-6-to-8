@@ -1,22 +1,13 @@
 [project]
 entrypoint = "index.html"
-requires = [ "python-3.13" ]
 template = "native-static"
 version = "0.0.28"
 appliedPatches = [ ]
 
-[dev]
-build = [ ]
-run = [
-  "sh",
-  "-c",
-  "python3 -m http.server ${DEPLOY_RUN_PORT:-5000} --bind 0.0.0.0 --directory ."
-]
+[deploy.profile]
+kind = "service"
+flavor = "web"
+requires = [ "python-3.13" ]
 
-[deploy]
-build = [ ]
-run = [
-  "sh",
-  "-c",
-  "python3 -m http.server ${DEPLOY_RUN_PORT:-5000} --bind 0.0.0.0 --directory ."
-]
+[subprojects]
+path = [ "." ]
