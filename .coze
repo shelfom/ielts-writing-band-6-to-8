@@ -4,6 +4,9 @@ template = "native-static"
 version = "0.0.28"
 appliedPatches = [ ]
 
+[deploy]
+run = [ "./scripts/coze-deploy-run.sh" ]
+
 [deploy.profile]
 kind = "service"
 flavor = "web"
