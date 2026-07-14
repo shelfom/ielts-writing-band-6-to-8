@@ -4,6 +4,9 @@ template = "native-static"
 version = "0.0.28"
 appliedPatches = [ ]
 
+[dev]
+run = [ "python3", "-m", "http.server", "5000", "--bind", "0.0.0.0", "--directory", "." ]
+
 [deploy]
 run = [ "./scripts/coze-deploy-run.sh" ]
 
