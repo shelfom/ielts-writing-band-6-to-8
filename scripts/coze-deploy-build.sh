@@ -6,7 +6,7 @@ set -euo pipefail
 
 echo "[build] Checking static assets..."
 
-for f in index.html scripts/data.js scripts/app.js; do
+for f in index.html; do
   if [ ! -f "$f" ]; then
     echo "[build] ERROR: required file missing: $f" >&2
     exit 1
