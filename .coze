@@ -1,0 +1,19 @@
+[project]
+entrypoint = "index.html"
+template = "native-static"
+version = "0.0.28"
+appliedPatches = [ ]
+
+[dev]
+run = [ "python3", "-m", "http.server", "5000", "--bind", "0.0.0.0", "--directory", "." ]
+
+[deploy]
+run = [ "./scripts/coze-deploy-run.sh" ]
+
+[deploy.profile]
+kind = "service"
+flavor = "web"
+requires = [ "python-3.13" ]
+
+[subprojects]
+path = [ "." ]
