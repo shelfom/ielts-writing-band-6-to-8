@@ -16,6 +16,12 @@ Rewrite a Band 6 sentence at Band 8, then compare it with a Band 8 version.
 - Write your upgrade, then reveal a Band 8 rewrite
 - A single HTML file: works offline once loaded
 
+## How it works · 图解
+
+Why this drill exists and how to use it, in five cards (Chinese).
+
+<a href="docs/cards/01.jpg"><img src="docs/cards/thumb-01.jpg" width="150" alt="雅思写作 6 分升 8 分 1/5"></a> <a href="docs/cards/02.jpg"><img src="docs/cards/thumb-02.jpg" width="150" alt="雅思写作 6 分升 8 分 2/5"></a> <a href="docs/cards/03.jpg"><img src="docs/cards/thumb-03.jpg" width="150" alt="雅思写作 6 分升 8 分 3/5"></a> <a href="docs/cards/04.jpg"><img src="docs/cards/thumb-04.jpg" width="150" alt="雅思写作 6 分升 8 分 4/5"></a> <a href="docs/cards/05.jpg"><img src="docs/cards/thumb-05.jpg" width="150" alt="雅思写作 6 分升 8 分 5/5"></a>
+
 ## Run it locally
 
 ```bash
